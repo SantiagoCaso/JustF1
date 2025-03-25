@@ -1,0 +1,35 @@
+nav{
+ display: flex;
+ justify-content: center;
+ flex-flow: wrap;
+ align-items: center;
+ gap: 5rem;
+ backdrop-filter: blur(5px);
+ position: sticky;
+ top: 0px;
+ animation: adjust-header linear both;
+ animation-timeline: scroll();
+ animation-range: 0 100px;
+ font-size: 20px;
+ width: 100%;
+}
+
+
+
+@keyframes adjust-header{
+    to{
+        background: rgba(0, 0, 0, .3);
+        font-size: 12px;
+        height: 32px;
+        border-radius: 0;
+    }
+}
+
+
+@media (max-width: 425px) {
+    nav{
+        gap: 1rem;
+        font-size: 13px;
+        font-weight: 400;
+    }
+  }
