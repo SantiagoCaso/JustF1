@@ -1,24 +1,12 @@
 import React from 'react'
+import PositionsLastRece from '../Components/Races/PositionsLastRece'
+import { Drivers } from '../Components/Drivers/Drivers'
 
 export const Home = () => {
   
   return (
     <>
-    {/* {drivers ? 
-      (<>
-        <li>
-          {drivers.map((data, index) => (
-            <ul key={index} >
-              data.driver_number
-            </ul>
-          ))}
-        </li>
-      </> )
-      : 
-      (<>
-      
-      </>)
-    } */}
+    <Drivers/>
     <div>Home</div>
     <div>Home</div>
     <div>Home</div>

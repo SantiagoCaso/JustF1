@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav>
       <Link to="/">JustF1</Link>
       <Link to="/escuderias">Escuderias</Link>
-      <Link to="/pilotos">Pilotos</Link>
+      <Link to="/drivers">Pilotos</Link>
       <Link to="/monoplazas">Monoplazas</Link>
     </nav>
   );
