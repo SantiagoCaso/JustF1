@@ -9,11 +9,18 @@ nav{
  top: 0px;
  animation: adjust-header linear both;
  animation-timeline: scroll();
- animation-range: 0 100px;
+ animation-range: 0 150px;
  font-size: 20px;
  width: 100%;
+ z-index: 9999;
 }
 
+a{
+    animation: adjust-a linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+    
+}
 
 
 @keyframes adjust-header{
@@ -23,7 +30,16 @@ nav{
         height: 32px;
         border-radius: 0;
         font-weight: 400;
+        color: black;
     }
+}
+
+@keyframes adjust-a{
+    to{
+        background: rgba(0, 0, 0, 0);
+        color: black;
+    }
+
 }
 
 

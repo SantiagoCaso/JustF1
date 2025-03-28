@@ -1,11 +1,13 @@
 import React from 'react'
 import PositionsLastRece from '../Components/Races/PositionsLastRece'
 import { Drivers } from '../Components/Drivers/Drivers'
+import { DriverDetail } from '../Components/Drivers/DriverDetail'
 
 export const Home = () => {
   
   return (
     <>
+    <DriverDetail/>
     <Drivers/>
     <div>Home</div>
     <div>Home</div>

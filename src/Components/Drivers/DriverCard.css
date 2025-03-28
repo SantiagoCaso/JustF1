@@ -2,9 +2,41 @@
 
 .number{
     font-family: 'Chakra Petch', sans-serif;
-    color: red;
+    color: rgb(0, 0, 0);
     font-weight: 900;
 }
 
+.card:hover .number,
+.parent:active .number {
+    color: red; /* Cambia el color cuando el padre tiene hover */
+    transform: scale(1.2); /* Efecto de escala opcional */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
 
-  
+.title{
+    font-size: 2.25rem;
+    color: red;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 600;
+    margin: 40px;
+}
+
+@media (max-width: 425px) {
+    .card{
+        width: 150px;
+        
+    }
+    h3 {
+        font-size: 24px;
+        padding: 0;
+    }
+    h4{
+        font-size: 18px;
+        padding: 0;
+    }
+    .title{
+        font-size: larger;
+        margin: 20px 0px  20px 0px;
+        text-align: center;
+    }
+}
