@@ -3,7 +3,8 @@ import './App.css'
 import { Home } from './Pages/Home'
 import Navbar from './Components/NavBar/NavBar'
 import { Drivers } from './Components/Drivers/Drivers'
-import { DriverDetail } from './Components/Drivers/DriverDetail'
+import { DriverDetail } from './Components/Drivers/DriverDetail/DriverDetail'
+
 
 function App() {
 

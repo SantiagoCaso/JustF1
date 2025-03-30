@@ -6,7 +6,7 @@ const Navbar = () => {
       <Link to="/">JustF1</Link>
       <Link to="/escuderias">Escuderias</Link>
       <Link to="/drivers">Pilotos</Link>
-      <Link to="/monoplazas">Monoplazas</Link>
+      <Link to="/monoplazas">Circuitos</Link>
     </nav>
   );
 };
