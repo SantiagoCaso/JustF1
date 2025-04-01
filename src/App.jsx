@@ -4,6 +4,7 @@ import { Home } from './Pages/Home'
 import Navbar from './Components/NavBar/NavBar'
 import { Drivers } from './Components/Drivers/Drivers'
 import { DriverDetail } from './Components/Drivers/DriverDetail/DriverDetail'
+import { AllRaces } from './Components/Races/AllRaces'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/drivers" element={<Drivers />} />
           <Route path="/driver-profile/:driverNumber" element={<DriverDetail/>} />
+          <Route path="/meetings" element={<AllRaces />} />
         </Routes>
       </BrowserRouter>
   )

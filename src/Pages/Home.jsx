@@ -1,14 +1,11 @@
 import React from 'react'
-import PositionsLastRece from '../Components/Races/PositionsLastRece'
-import { Drivers } from '../Components/Drivers/Drivers'
-import { DriverDetail } from '../Components/Drivers/DriverDetail/DriverDetail'
-import { CircularProgress } from '@mui/material'
+import { AllRaces } from '../Components/Races/AllRaces'
 
 export const Home = () => {
   
   return (
     <>
-    
+    <AllRaces/>
     <div>Home</div>
     <div>Home</div>
     <div>Home</div>
