@@ -3,7 +3,7 @@
     width: 50vh;
     display: flex;
     flex-direction: column-reverse;
-    justify-content: end; 
+    justify-content: space-between; 
     align-items: start; 
     background-color: rgba(141, 153, 174, 0.3); 
     padding-right: 20px;
@@ -21,6 +21,7 @@
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
+    
 }
 
 img{
@@ -36,12 +37,34 @@ img{
     text-align: left;
 }
 
-.name{
-    font-size: 2.25rem;
-}
+
 
 .team{
     font-size: 1.5rem;
+}
+.div-data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2px 3px  0px 3px; 
+}
+.name{
+    font-size: 2.25rem;
+    justify-content: center;
+}
+.last-position{
+     
+    justify-content: space-around;    
+}
+.last-position:hover{
+    background-color: rgba(72, 23, 117, 0.314);
+    transition: 0.300s;
+}
+.soft{
+    align-self: flex-end;
+    color: gray;
+    font-size: x-small;
 }
 
 @media (max-width: 430px) {
@@ -100,8 +123,10 @@ img{
         }
 
         .soft{
+
             color: gray;
             font-size: x-small;
+           
         }
         
 

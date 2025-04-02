@@ -2,25 +2,26 @@ import React from 'react'
 import './DriverDetailContainer.css'
 
 const DriverDetailConteiner = ({fullName, team, number, lastPosition, country, shortName, img, lastRace}) => {
+  
   return (
     <div className='driver-container'>
         <div className='driver-img '>
             <img src={img} alt={fullName} />
-            <p className='self-center number text-8xl'>{number}</p>
+            <p className='self-center number text-8xl '>{number}</p>
         </div>
         <div className='driver-data m-1'>
             <div className='div-data name'>
               {fullName}
             </div>
-            <div className='div-data country'>
-              <p>
-                {country}
-              </p>
-              <p className='soft'>país origen</p>  
-            </div>
             <div className='div-data team'>
               <p>{team}</p>
               <p className='soft'>escudería</p>
+            </div>
+            <div className='div-data country'>
+              <p>
+              {country || "País"}
+              </p>
+              <p className='soft '>país origen</p>  
             </div>
             <div className='div-data acro'>
               <p>{shortName}</p>

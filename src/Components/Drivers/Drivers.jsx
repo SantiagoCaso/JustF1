@@ -36,6 +36,7 @@ export const Drivers = () => {
     return (
         <>
             <h3 className='title'>Pilotos Temporada {year}</h3>
+            <div className='flex w-full justify-between'>
             <input 
                 type="text" 
                 placeholder='Buscar piloto' 
@@ -43,6 +44,8 @@ export const Drivers = () => {
                 onChange={searcher} 
                 className="search-input border-black border-1 rounded-md m-4 mt-0 hover:border-white p-1"
             />
+            <p className='text-gray-600 text-xs self-center pr-1 text-end'>Selecione un piloto para más información</p>
+            </div>
             <div className='flex flex-wrap gap-3.5 justify-center'>
                 {drivers ? ( 
                     filteredDrivers.length > 0 ? (
