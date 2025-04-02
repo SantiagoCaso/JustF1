@@ -1,0 +1,8 @@
+.all-races{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100%;
+    gap: 10px;
+}

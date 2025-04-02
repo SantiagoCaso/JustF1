@@ -8,3 +8,9 @@ h4{
     font-family: "Dancing Script", sans-serif;
     
 }
+
+.soft{
+    align-self: flex-end;
+    color: gray;
+    font-size: x-small;
+}
