@@ -8,12 +8,28 @@ const DriverDetailConteiner = ({fullName, team, number, lastPosition, country, s
             <img src={img} alt={fullName} />
             <p className='self-center number text-8xl'>{number}</p>
         </div>
-        <div className='driver-data self-end m-3'>
-            <p className='name'>{fullName}</p>
-            <p className='country'>{country}</p>
-            <p className='team'>{team}</p>
-            <p className='acro'>{shortName}</p>
-            <p className='last-position'>Posición final en {lastRace}: {lastPosition}°</p>
+        <div className='driver-data m-1'>
+            <div className='div-data name'>
+              {fullName}
+            </div>
+            <div className='div-data country'>
+              <p>
+                {country}
+              </p>
+              <p className='soft'>país origen</p>  
+            </div>
+            <div className='div-data team'>
+              <p>{team}</p>
+              <p className='soft'>escudería</p>
+            </div>
+            <div className='div-data acro'>
+              <p>{shortName}</p>
+              <p className='soft'>acrónimo</p>
+            </div>
+            <div className='div-data last-position '>
+              <p className=''>Posición final en {lastRace} </p>
+              <p className='number'> {lastPosition}°</p>
+            </div>
         </div>
     </div>
   )

@@ -28,11 +28,12 @@ img{
     
 }
 
-.driver-data{
-    text-align: left;
+.driver-data {
+    width: 100%;  
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: flex-end; 
+    text-align: left;
 }
 
 .name{
@@ -43,3 +44,66 @@ img{
     font-size: 1.5rem;
 }
 
+@media (max-width: 430px) {
+    
+        .driver-container {
+            flex-direction: column; 
+            justify-content: space-around;
+            align-items: start;
+            max-width: 350px; 
+            padding-right: 20px;
+        }
+    
+        .driver-img {
+            height: 40%;
+            max-width: 200px;           
+            display: flex;
+            align-items: flex-end;   
+        }
+
+        img{
+            height: 100%;
+            width: 90%; 
+        }
+    
+        .driver-data {
+            align-items: flex-end;
+            text-align: start;
+            width: 100%;
+            
+        }
+    
+        .name {
+            font-size: 1.5rem;
+        }
+    
+        .team {
+            font-size: 1rem;
+        }
+
+        .div-data{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            padding: 2px 3px  0px 3px; 
+        }
+
+        .last-position{
+            background-color: rgba(72, 23, 117, 0.401); 
+            justify-content: space-around;    
+        }
+
+        .name{
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .soft{
+            color: gray;
+            font-size: x-small;
+        }
+        
+
+    
+}
