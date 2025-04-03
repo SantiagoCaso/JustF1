@@ -1,5 +1,6 @@
 import React from 'react'
 import { AllRaces } from '../Components/Races/AllRaces'
+import { Top3Drivers } from '../Components/Races/TopDrivers/Top3Drivers/Top3Drivers'
 
 export const Home = () => {
   

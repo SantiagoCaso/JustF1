@@ -24,4 +24,7 @@ a:hover {
 }
 
 
-
+::selection {
+  background-color: rgba(255, 204, 0, 0.5); 
+  color: black;
+}

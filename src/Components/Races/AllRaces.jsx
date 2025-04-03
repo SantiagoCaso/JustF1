@@ -1,27 +1,28 @@
-import { CircularProgress } from '@mui/material';
+import { CircularProgress, Select } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import { RaceComponent } from './RaceComponent/RaceComponent';
 import "./AllRaces.css"
+import InputSelect from '../Select/InputSelect';
 
 export const AllRaces = () => {
     const [races, setRaces] = useState(null)
     const [search, setSearch] = useState("");
     const year = new Date().getFullYear();
+    const [selectedYear, setSelectedYear] = useState(year);
     useEffect(() => {
-        fetch(`https://api.openf1.org/v1/meetings?year=${year}`)
+        fetch(`https://api.openf1.org/v1/meetings?year=${selectedYear}`)
             .then(response => response.json())
             .then((data) => {
                 setRaces(data)
                 console.log(data)
             });
     
-    }, [])
+    }, [selectedYear])
 
     const searcher = (e) => {
         setSearch(e.target.value);
     };
-
-    // filtrar los pilotos 
+ 
     const filteredRaces = races ? races.filter((data) =>
         data.meeting_name.toLowerCase().includes(search.toLowerCase()) ||
         data.location.toLowerCase().includes(search.toLowerCase()) ||
@@ -31,13 +32,16 @@ export const AllRaces = () => {
     
   return (
     <div className='all-races'>
-        <input 
-                type="text" 
-                placeholder='Buscar fechas' 
-                value={search} 
-                onChange={searcher} 
-                className="search-input border-black border-1 rounded-md m-4 mt-0 hover:border-white p-1"
-        />
+        <div className='filters'>
+            <InputSelect onChange={setSelectedYear}/>
+            <input 
+                    type="text" 
+                    placeholder='Buscar fechas' 
+                    value={search} 
+                    onChange={searcher} 
+                    className="search-input border-black border-1 rounded-md m-4 mt-0 hover:border-white p-1 bg-black"
+                    />
+            </div> 
         {races ? (
             filteredRaces.length > 0 ? (
                 filteredRaces.map((data, index) => (
