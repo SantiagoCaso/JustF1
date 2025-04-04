@@ -1,0 +1,24 @@
+.table-drivers-positions {
+    margin: 5px;
+    border-collapse: collapse;
+    border: 1px solid #ffffff75; 
+    width: 100%;
+    color: black;
+    box-shadow: rgba(173, 216, 230, 0.2) 0px 13px 27px -5px,
+    rgba(173, 216, 230, 0.1) 0px 8px 16px -8px;
+}
+  
+.fila {
+  background-color: rgba(240, 255, 255, 0.633);
+}
+
+.celda {
+  border: 1px solid #ffffff75; 
+
+}
+
+.table-body{
+    background-color: #d5e1e176;
+    border: 1px solid #ffffff75; 
+}
+  

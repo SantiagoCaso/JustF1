@@ -29,11 +29,11 @@ export const DriverDetail = () => {
     }, [driverNumber])
 
   return (
-    <div className='container'>
+    <div className=''>
         {finalPosition ? (
         <div>
           {driver?.map((data2, data3, index) => (
-            <div key={index}  className='driver-map-container'>
+            <div key={index}  className='driver-map'>
               <DriverDetailConteiner 
               img={data2.headshot_url}
               fullName={data2.full_name} 
