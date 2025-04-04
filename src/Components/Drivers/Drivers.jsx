@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import DriverCard from './DriverCard';
 import { useNavigate } from 'react-router-dom';
 import { CircularProgress } from '@mui/material';
+import { toast } from 'react-toastify';
 
 export const Drivers = () => {
     const navigate = useNavigate();
@@ -11,9 +12,20 @@ export const Drivers = () => {
 
     
     useEffect(() => {
-        fetch('https://api.openf1.org/v1/drivers?session_key=latest')
-            .then(response => response.json())
-            .then((data) => setDrivers(data));
+        const fetchDrivers = async () => {
+            try {
+                const response = await fetch(`https://api.openf1.org/v1/drivers?session_key=latest`);
+                if (!response.ok) {
+                    throw new Error(`Error ${response.status}: ${response.statusText}`);
+                }
+                const data = await response.json();
+                setDrivers(data)
+            } catch (error) {
+                console.error('Hubo un problema al obtener los pilotos:', error);
+                toast.error('Ocurrió un error del servidor. Intenta más tarde.');
+            }
+        }
+       fetchDrivers();
     }, []);
 
     

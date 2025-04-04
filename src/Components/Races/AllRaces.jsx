@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { RaceComponent } from './RaceComponent/RaceComponent';
 import "./AllRaces.css"
 import InputSelect from '../Select/InputSelect';
+import { toast } from 'react-toastify';
+
 
 export const AllRaces = () => {
     const [races, setRaces] = useState(null)
@@ -10,14 +12,22 @@ export const AllRaces = () => {
     const year = new Date().getFullYear();
     const [selectedYear, setSelectedYear] = useState(year);
     useEffect(() => {
-        fetch(`https://api.openf1.org/v1/meetings?year=${selectedYear}`)
-            .then(response => response.json())
-            .then((data) => {
-                setRaces(data)
-                console.log(data)
-            });
-    
-    }, [selectedYear])
+        const fetchRaces = async () => {
+            try {
+                const response = await fetch(`https://api.openf1.org/v1/meetings?year=${selectedYear}`);
+                if (!response.ok) {
+                    throw new Error(`Error ${response.status}: ${response.statusText}`);
+                }
+                const data = await response.json();
+                setRaces(data);
+                console.log(data);
+            } catch (error) {
+                console.error('Hubo un problema al obtener las carreras:', error);
+                toast.error('Ocurrió un error del servidor. Intenta más tarde.');
+            }
+        };
+        fetchRaces();
+    }, [selectedYear]);
 
     const searcher = (e) => {
         setSearch(e.target.value);
