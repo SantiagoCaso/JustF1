@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./RaceComponent.css"
-export const RaceComponent = ({meetingName, country, city, circuit, officialName, dateStart}) => {
+export const RaceComponent = ({meetingName, country, city, circuit, officialName, dateStart, meetingKey}) => {
+  const [meeting, setMeeting] = useState([])
+  useEffect(() => {
+    fetch(`https://api.openf1.org/v1/sessions?meeting_key=${meetingKey}`)
+    .then(response => response.json())
+    .then((data) => {
+      setMeeting(data)      
+    });   
+  }, [])
+  
   return (
     <div className='race-component'>
         <div className='data-race meeting-name text-3xl font-semibold'>
@@ -25,6 +34,11 @@ export const RaceComponent = ({meetingName, country, city, circuit, officialName
         <div className='data-race oficial-name soft'>
           <p></p>
           <p>{officialName}</p>
+        </div>
+        <div className='sessions flex justify-around w-full text-gray-600'>
+          {meeting?.map((data, index) => (
+            <p key={index} className='hover:underline cursor-pointer'>{data.session_name}</p>
+          ))}
         </div>
     </div>
   )

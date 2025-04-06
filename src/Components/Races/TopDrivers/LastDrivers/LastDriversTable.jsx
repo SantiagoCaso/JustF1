@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { LastDriversComponent } from './LastDriversComponent/LastDriversComponent';
 import "./LastDriversTable.css"
-const LastDriversTable = () => {
+const LastDriversTable = ({meetingKey}) => {
     const [drivers, setDrivers] = useState(null)
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')

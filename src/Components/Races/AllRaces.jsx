@@ -6,11 +6,12 @@ import InputSelect from '../Select/InputSelect';
 import { toast } from 'react-toastify';
 
 
-export const AllRaces = () => {
+export const AllRaces = ({setKey}) => {
     const [races, setRaces] = useState(null)
     const [search, setSearch] = useState("");
     const year = new Date().getFullYear();
     const [selectedYear, setSelectedYear] = useState(year);
+
     useEffect(() => {
         const fetchRaces = async () => {
             try {
@@ -39,6 +40,9 @@ export const AllRaces = () => {
         new Date(data.date_start).toDateString().toLowerCase().includes(search.toLowerCase())
 
     ) : [];
+
+    
+
     
   return (
     <div className='all-races'>
@@ -55,7 +59,7 @@ export const AllRaces = () => {
         {races ? (
             filteredRaces.length > 0 ? (
                 filteredRaces.map((data, index) => (
-                    <div key={index}>
+                    <div key={index} onClick={() => setKey(data.meeting_key)}>
                         <RaceComponent 
                             meetingName={data.meeting_name} 
                             country={data.country_name} 
@@ -63,6 +67,7 @@ export const AllRaces = () => {
                             circuit={data.circuit_short_name} 
                             officialName={data.meeting_official_name} 
                             dateStart={new Date(data.date_start).toDateString()} 
+                            meetingKey={data.meeting_key}
                         />
                     </div>
                 ))
