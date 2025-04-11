@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./RaceComponent.css"
-export const RaceComponent = ({meetingName, country, city, circuit, officialName, dateStart, meetingKey}) => {
+export const RaceComponent = ({meetingName, country, city, circuit, officialName, dateStart, meetingKey, setSessionKey}) => {
   const [meeting, setMeeting] = useState([])
   useEffect(() => {
     fetch(`https://api.openf1.org/v1/sessions?meeting_key=${meetingKey}`)
@@ -37,7 +37,15 @@ export const RaceComponent = ({meetingName, country, city, circuit, officialName
         </div>
         <div className='sessions flex justify-around w-full text-gray-600'>
           {meeting?.map((data, index) => (
-            <p key={index} className='hover:underline cursor-pointer'>{data.session_name}</p>
+            <p key={index} className='hover:underline cursor-pointer' 
+              onClick={() => {
+                setSessionKey(data.session_key)
+                console.log("Session key: " + data.session_key)
+                console.log("Meeting key: " + meetingKey)
+                console.log("Meeting Name: " + meetingName)
+                }}>
+                  {data.session_name}
+            </p>
           ))}
         </div>
     </div>

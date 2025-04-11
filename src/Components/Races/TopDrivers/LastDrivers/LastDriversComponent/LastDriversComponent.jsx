@@ -4,10 +4,10 @@ import "./LastDriversComponent.css"
 export const LastDriversComponent = ({name, driverNumber, team, position}) => {
   return (
         <tr>
-            <td>{driverNumber}</td>
+            <td>{position}</td>
             <td>{name}</td>
             <td>{team}</td>
-            <td>{position}</td>
+            <td>{driverNumber}</td>
         </tr>
   )
 }

@@ -1,22 +1,65 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { LastDriversComponent } from './LastDriversComponent/LastDriversComponent';
-import "./LastDriversTable.css"
-const LastDriversTable = ({meetingKey}) => {
-    const [drivers, setDrivers] = useState(null)
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-        .then(response => response.json())
-        .then((data) => {
-            setDrivers(data)
-            console.log(data)        
-    });
-    }, [])
-    
-    
+import './LastDriversTable.css';
+
+const LastDriversTable = ({ meetingKey, sessionKey }) => {
+  const [finalPositions, setFinalPositions] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      // Fetch posiciones
+      const resPos = await fetch(`https://api.openf1.org/v1/position?meeting_key=${meetingKey}&session_key=${sessionKey}`);
+      const posiciones = await resPos.json();
+
+      // Agrupar por piloto
+      const posicionesPorDriver = new Map();
+      posiciones.forEach(p => {
+        const id = p.driver_number;
+        if (!posicionesPorDriver.has(id)) {
+          posicionesPorDriver.set(id, []);
+        }
+        posicionesPorDriver.get(id).push(p);
+      });
+
+      // Obtener última posición por piloto
+      const posicionesFinales = [];
+      posicionesPorDriver.forEach((posList, driverId) => {
+        posList.sort((a, b) => new Date(a.date) - new Date(b.date));
+        const ultima = posList[posList.length - 1];
+        posicionesFinales.push({
+          driver_number: driverId,
+          position: ultima.position,
+          date: ultima.date
+        });
+      });
+
+      // Fetch drivers
+      const resDrivers = await fetch(`https://api.openf1.org/v1/drivers?session_key=${sessionKey}`);
+      const drivers = await resDrivers.json();
+
+      // Combinar datos
+      const dataFinal = posicionesFinales.map(pos => {
+        const driverInfo = drivers.find(d => d.driver_number === parseInt(pos.driver_number));
+        return {
+          name: driverInfo?.full_name || 'Desconocido',
+          driverNumber: pos.driver_number,
+          team: driverInfo?.team_name ||  ' - ',
+          position: pos.position
+        };
+      });
+
+      // Ordenar por posición
+      dataFinal.sort((a, b) => a.position - b.position);
+
+      setFinalPositions(dataFinal);
+    };
+
+    fetchData();
+  }, [meetingKey, sessionKey]);
 
   return (
     <table className="table-drivers-positions">
-        <thead>
+      <thead>
         <tr className="fila">
           <th className="celda">Pt</th>
           <th className="celda">Nombre</th>
@@ -24,13 +67,19 @@ const LastDriversTable = ({meetingKey}) => {
           <th className="celda">N°</th>
         </tr>
       </thead>
-        <tbody className='table-body'>
-        {drivers?.map((data, index) => (
-            <LastDriversComponent key={index} name={data.name} driverNumber={data.id} team={data.website} position={data.id}/>
+      <tbody className="table-body">
+        {finalPositions.map((driver, index) => (
+          <LastDriversComponent
+            key={index}
+            name={driver.name}
+            driverNumber={driver.driverNumber}
+            team={driver.team}
+            position={driver.position}
+          />
         ))}
-        </tbody>
+      </tbody>
     </table>
-  )
-}
+  );
+};
 
-export default LastDriversTable
+export default LastDriversTable;
