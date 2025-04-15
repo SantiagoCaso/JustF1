@@ -6,7 +6,7 @@ import InputSelect from '../Select/InputSelect';
 import { toast } from 'react-toastify';
 
 
-export const AllRaces = ({setKey, setSessionKey}) => {
+export const AllRaces = ({setKey, setSessionKey, setSessionName}) => {
     const [races, setRaces] = useState(null)
     const [search, setSearch] = useState("");
     const year = new Date().getFullYear();
@@ -71,6 +71,7 @@ export const AllRaces = ({setKey, setSessionKey}) => {
                             dateStart={new Date(data.date_start).toDateString()} 
                             meetingKey={data.meeting_key}
                             setSessionKey={setSessionKey}
+                            setSessionName={setSessionName}
                         />
                     </div>
                 ))

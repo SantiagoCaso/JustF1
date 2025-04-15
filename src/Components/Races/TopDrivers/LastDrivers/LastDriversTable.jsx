@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { LastDriversComponent } from './LastDriversComponent/LastDriversComponent';
 import './LastDriversTable.css';
+import { CircularProgress } from '@mui/material';
 
 const LastDriversTable = ({ meetingKey, sessionKey }) => {
   const [finalPositions, setFinalPositions] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
+      try {
       // Fetch posiciones
       const resPos = await fetch(`https://api.openf1.org/v1/position?meeting_key=${meetingKey}&session_key=${sessionKey}`);
       const posiciones = await resPos.json();
@@ -52,33 +56,46 @@ const LastDriversTable = ({ meetingKey, sessionKey }) => {
       dataFinal.sort((a, b) => a.position - b.position);
 
       setFinalPositions(dataFinal);
+    }catch (error){
+      console.error("Error fetching data:", error);
+    }finally{
+      setLoading(false);
+    }
     };
 
     fetchData();
   }, [meetingKey, sessionKey]);
 
   return (
-    <table className="table-drivers-positions">
-      <thead>
-        <tr className="fila">
-          <th className="celda">Pt</th>
-          <th className="celda">Nombre</th>
-          <th className="celda">Escuderia</th>
-          <th className="celda">N°</th>
-        </tr>
-      </thead>
-      <tbody className="table-body">
-        {finalPositions.map((driver, index) => (
-          <LastDriversComponent
-            key={index}
-            name={driver.name}
-            driverNumber={driver.driverNumber}
-            team={driver.team}
-            position={driver.position}
-          />
-        ))}
-      </tbody>
-    </table>
+    <>
+      {loading? (
+        <div className='flex justify-center items-center m-10 p-10'>
+          <CircularProgress />  
+        </div>
+      ) : (
+        <table className="table-drivers-positions">
+        <thead>
+          <tr className="fila">
+            <th className="celda">Pt</th>
+            <th className="celda">Nombre</th>
+            <th className="celda">Escuderia</th>
+            <th className="celda">N°</th>
+          </tr>
+        </thead>
+        <tbody className="table-body">
+          {finalPositions.map((driver, index) => (
+            <LastDriversComponent
+              key={index}
+              name={driver.name}
+              driverNumber={driver.driverNumber}
+              team={driver.team}
+              position={driver.position}
+            />
+          ))}
+        </tbody>
+      </table>
+      ) }
+    </>
   );
 };
 

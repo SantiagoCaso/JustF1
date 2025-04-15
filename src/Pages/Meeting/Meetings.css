@@ -20,3 +20,20 @@
 .left{
   justify-content: center;
 }
+
+@media (max-width: 768px) {
+  .right {
+    display: none;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr ; 
+    height: 100vh; 
+    justify-content: space-around;
+  }
+  p{
+    font-size: smaller;
+  }
+  
+}

@@ -6,13 +6,14 @@ import LastDriversTable from '../../Components/Races/TopDrivers/LastDrivers/Last
 export const Meetings = () => {
     const [meetingKey, setKey] = useState(null)
     const [sessionKey, setSessionKey] = useState(null)
+    const [sessionName, setSessionName] = useState(null)
   return (
       <div className='container'>
           <section className='left'>
-              <AllRaces setKey={setKey} setSessionKey={setSessionKey}/>
+              <AllRaces setKey={setKey} setSessionKey={setSessionKey} setSessionName={setSessionName}/>
           </section>
-          <section className='right'>
-              <p>Pilotos top 3 || posiciones de todos los pilotos</p>
+          <section className={`right`}>
+              <p>Tabla de posiciones de {sessionName} </p>
               <LastDriversTable meetingKey={meetingKey} sessionKey={sessionKey}/>
           </section>
       </div>
