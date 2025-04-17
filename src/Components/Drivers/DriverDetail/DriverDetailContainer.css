@@ -75,14 +75,15 @@ img{
     
         .driver-img {
             height: 40%;
-            max-width: 200px;           
+            width: 100%;           
             display: flex;
-            align-items: flex-end;   
+            flex-direction: row;
+            justify-content: space-around;
         }
 
-        img{
+        .img-detail{
             height: 100%;
-            width: 90%; 
+            width: auto; 
         }
     
         .driver-data {
@@ -123,6 +124,14 @@ img{
             font-size: x-small;
         }
         
-
+        .pilot{
+            font-size: 96px;
+            color: rgb(220, 0, 0);
+            text-shadow:
+                -1px -1px 0 #000000,  
+                 1px -1px 0 #000000,
+                -1px  1px 0 #000000,
+                 1px  1px 0 #000000;
+        }
     
 }

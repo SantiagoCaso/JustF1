@@ -6,8 +6,8 @@ const DriverDetailConteiner = ({fullName, team, number, lastPosition, country, s
   return (
     <div className='driver-container'>
         <div className='driver-img '>
-            <img src={img} alt={fullName} />
-            <p className='self-center number text-8xl '>{number}</p>
+            <img src={img} alt={fullName} className='img-detail' />
+            <p className='self-center number pilot text-8xl '>{number}</p>
         </div>
         <div className='driver-data m-1'>
             <div className='div-data name'>

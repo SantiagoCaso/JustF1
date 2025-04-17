@@ -13,12 +13,13 @@
   
 .right {
   flex-direction: column;
-  justify-content: start;
-  margin-top: 26%;
+  justify-content: center;
+
 }
 
 .left{
   justify-content: center;
+  
 }
 
 @media (max-width: 768px) {

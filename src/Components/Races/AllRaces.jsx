@@ -55,7 +55,7 @@ export const AllRaces = ({setKey, setSessionKey, setSessionName}) => {
                     onChange={searcher} 
                     className="search-input border-black border-1 rounded-md m-4 mt-0 hover:border-white p-1 bg-black"
                     />
-            </div> 
+        </div> 
         {races ? (
             filteredRaces.length > 0 ? (
                 filteredRaces.map((data, index) => (

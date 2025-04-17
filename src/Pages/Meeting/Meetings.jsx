@@ -13,7 +13,9 @@ export const Meetings = () => {
               <AllRaces setKey={setKey} setSessionKey={setSessionKey} setSessionName={setSessionName}/>
           </section>
           <section className={`right`}>
-              <p>Tabla de posiciones de {sessionName} </p>
+            {sessionKey? (<p>Tabla de posiciones en {sessionName} </p>) : 
+            (<p className='soft '>seleccione una fecha para poder ver los resultados</p>)  
+            }
               <LastDriversTable meetingKey={meetingKey} sessionKey={sessionKey}/>
           </section>
       </div>

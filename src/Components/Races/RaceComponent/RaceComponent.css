@@ -7,6 +7,7 @@
     padding: 20px;
     background-color: rgba(240, 255, 255, 0.633);
     box-shadow: rgba(174, 6, 6, 0.25) 0px 54px 55px, rgba(136, 5, 5, 0.12) 0px -12px 30px, rgba(139, 7, 7, 0.12) 0px 4px 6px, rgba(146, 4, 4, 0.17) 0px 12px 13px, rgba(255, 0, 0, 0.09) 0px -3px 5px;    
+    direction: ltr;
 }
 
 .data-race{
