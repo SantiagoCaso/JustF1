@@ -6,7 +6,7 @@ export const Top3Drivers = ({idMeeting}) => {
   const [finalPosition, setFinalPosition] = useState(null)
 
   useEffect(() => {
-    fetch(`https://api.openf1.org/v1/position?meeting_key=${idMeeting}`)
+    fetch(`https://api.openf1.org/v1/position?meeting_key=${idMeeting}&session_key=latest`)
     .then(response => response.json())
     .then((data) => {
       setDrivers(data)
@@ -20,7 +20,7 @@ export const Top3Drivers = ({idMeeting}) => {
     <div>
       <div>
           {drivers?.map((data, index)=> (
-            <div key={index}>{data}</div>
+            <div key={index}>{data.first_name}</div>
           ))}
       </div>
       <p>{finalPosition}</p>

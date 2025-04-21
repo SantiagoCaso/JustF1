@@ -21,11 +21,12 @@
   justify-content: center;
   
 }
+.soft.movil{
+  display: none;
+}
 
 @media (max-width: 768px) {
-  .right {
-    display: none;
-  }
+ 
 
   .container {
     display: grid;
@@ -36,5 +37,8 @@
   p{
     font-size: smaller;
   }
-  
+  .soft.movil{
+    display: block;
+  }
+
 }

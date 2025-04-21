@@ -9,10 +9,10 @@ export const Meetings = () => {
     const [sessionName, setSessionName] = useState(null)
   return (
       <div className='container'>
-          <section className='left'>
+          <section className={`${!sessionKey ? 'left' : 'hidden md:block' }`}>
               <AllRaces setKey={setKey} setSessionKey={setSessionKey} setSessionName={setSessionName}/>
           </section>
-          <section className={`right`}>
+          <section className={`${!sessionKey ? 'hidden md:block' : 'right m-1'}`}>
             {sessionKey? (<p>Tabla de posiciones en {sessionName} </p>) : 
             (<p className='soft '>seleccione una fecha para poder ver los resultados</p>)  
             }
