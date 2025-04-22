@@ -18,7 +18,9 @@ export const Meetings = () => {
             (<p className='soft '>seleccione una fecha para poder ver los resultados</p>)  
             }
               <LastDriversTable meetingKey={meetingKey} sessionKey={sessionKey}/>
-              <Weather sessionKey={sessionKey}/>
+              <div className='flex w-full justify-end'>
+                <Weather sessionKey={sessionKey}/>
+              </div>
           </section>
       </div>
   )

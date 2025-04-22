@@ -11,6 +11,7 @@ const Weather = ({sessionKey}) => {
             .then(data => {
                 setWeather(data);
               })
+            .then(console.log(weather))
     }, [sessionKey])
 
     const lastWeather = weather?.[weather.length - 1];
@@ -23,7 +24,7 @@ const Weather = ({sessionKey}) => {
               airTemperature={lastWeather.air_temperature} 
               date={new Date(lastWeather.date).toDateString()} 
               humidity={lastWeather.humidity} 
-              rainFall={lastWeather.rain_fall} 
+              rainFall={lastWeather.rainfall} 
               trackTemperature={lastWeather.track_temperature} 
               windSpeed={lastWeather.wind_speed}
               pressure={lastWeather.pressure}
@@ -33,7 +34,7 @@ const Weather = ({sessionKey}) => {
           </div>
         )
        : (
-        <p>Datos del clima de la carrera</p>
+        <p className='hidden'>Datos del clima de la carrera</p>
       )}
     </div>
   )
