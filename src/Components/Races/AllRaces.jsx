@@ -53,7 +53,7 @@ export const AllRaces = ({setKey, setSessionKey, setSessionName}) => {
                     placeholder='Buscar fechas' 
                     value={search} 
                     onChange={searcher} 
-                    className="search-input border-black border-1 rounded-md m-4 mt-0 hover:border-white p-1 bg-black"
+                    className="search-input border-black border-1 rounded-md m-4 max-sm:m-1 mt-0 hover:border-white p-1 bg-black"
             />
             <p className='soft movil'>seleccione una fecha para poder ver los resultados</p>        
         </div> 

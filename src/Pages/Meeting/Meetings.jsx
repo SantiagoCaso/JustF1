@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { AllRaces } from '../../Components/Races/AllRaces'
 import "./Meetings.css"
 import LastDriversTable from '../../Components/Races/TopDrivers/LastDrivers/LastDriversTable'
+import Weather from '../../Components/Races/WeatherRace/Weather'
 
 export const Meetings = () => {
     const [meetingKey, setKey] = useState(null)
@@ -17,6 +18,7 @@ export const Meetings = () => {
             (<p className='soft '>seleccione una fecha para poder ver los resultados</p>)  
             }
               <LastDriversTable meetingKey={meetingKey} sessionKey={sessionKey}/>
+              <Weather sessionKey={sessionKey}/>
           </section>
       </div>
   )
