@@ -10,7 +10,7 @@ export const FlagComponent = ({date, lapNumber, flag, message, driverNumber, sco
       });
     
      const getFlagColorClass = (flag) => {
-        switch (flag?.toUpperCase()) {
+        switch (flag) {
           case 'GREEN':
             return 'bg-green-800';
           case 'YELLOW':
@@ -33,12 +33,12 @@ export const FlagComponent = ({date, lapNumber, flag, message, driverNumber, sco
   return (
     <div className='flag-component-container'>
         <p>Momento {timeString}</p>
-        <p>Numero de vuelta {lapNumber}</p>
+        {lapNumber? (<p>Numero de vuelta {lapNumber}</p>) : (<></>)}
         <p className={`${getFlagColorClass(flag)}`}>
             Bandera {flag}
         </p>
         <p className=' pr-0.5'>Mensaje {message}</p>
-        {driverNumber? (<p>numero de piloto {driverNumber}</p>) : (<p></p>)}
+        {driverNumber? (<p>Numero de piloto {driverNumber}</p>) : (<p></p>)}
         {sector? (<p >Sector {sector}</p>) : (<p></p>)}
         <p className='soft-flag'>{scope}</p> 
     </div>

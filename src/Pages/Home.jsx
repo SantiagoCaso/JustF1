@@ -3,6 +3,7 @@ import { AllRaces } from '../Components/Races/AllRaces'
 import { Top3Drivers } from '../Components/Races/TopDrivers/Top3Drivers/Top3Drivers'
 import LastDriversTable from '../Components/Races/TopDrivers/LastDrivers/LastDriversTable'
 import './Home.css'
+import TeamsList from '../Components/Teams/TeamsList/TeamsList'
 
 export const Home = () => {
   
@@ -17,6 +18,7 @@ export const Home = () => {
         <div className='w-1/2 max-sm:w-full justify-center align-middle flex '>
          <p>poner algo acá </p>
          {/* <Top3Drivers idMeeting={'latest'}/> */}
+         <TeamsList/>
         </div>
       </div>
     </>

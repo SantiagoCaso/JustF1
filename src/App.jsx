@@ -8,6 +8,7 @@ import { AllRaces } from './Components/Races/AllRaces'
 import { Meetings } from './Pages/Meeting/Meetings'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TeamsList from './Components/Teams/TeamsList/TeamsList'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/teams" element={<TeamsList/>}/>
           <Route path="/drivers" element={<Drivers />} />
           <Route path="/driver-profile/:driverNumber" element={<DriverDetail/>} />
           <Route path="/meetings" element={<Meetings/>} />

@@ -14,15 +14,22 @@ export const Meetings = () => {
           <section className={`${!sessionKey ? 'left' : 'hidden md:block' }`}>
               <AllRaces setKey={setKey} setSessionKey={setSessionKey} setSessionName={setSessionName}/>
           </section>
-          <section className={`w-full  ${!sessionKey ? 'hidden md:block' : 'right m-1'}`}>
+          <section className={` ${!sessionKey ? 'hidden md:block' : 'right m-1'}`}>
             {sessionKey? (<p>Tabla de posiciones en {sessionName} </p>) : 
-            (<p className='soft '>seleccione una fecha para poder ver los resultados</p>)  
+            (<p className='soft text-center'>seleccione una fecha para poder ver los resultados</p>)  
             }
-              <LastDriversTable meetingKey={meetingKey} sessionKey={sessionKey}/>
-              <div className='flex w-full gap-1'>
-                <Weather sessionKey={sessionKey}/>
-                <FlagsRace sessionKey={sessionKey}/>
-              </div>
+              {sessionKey? 
+                (<>
+                  <LastDriversTable meetingKey={meetingKey} sessionKey={sessionKey}/>
+                  <div className='flex w-full gap-1'>
+                    <Weather sessionKey={sessionKey}/>
+                    <FlagsRace sessionKey={sessionKey}/>
+                  </div>
+                </>) 
+                : 
+                (<></>)
+              }
+              
           </section>
       </div>
   )
