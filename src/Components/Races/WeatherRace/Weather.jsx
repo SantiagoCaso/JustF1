@@ -11,7 +11,7 @@ const Weather = ({sessionKey}) => {
             .then(data => {
                 setWeather(data);
               })
-            .then(console.log(weather))
+
     }, [sessionKey])
 
     const lastWeather = weather?.[weather.length - 1];

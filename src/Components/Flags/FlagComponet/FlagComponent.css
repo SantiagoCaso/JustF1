@@ -1,0 +1,13 @@
+.flag-component-container{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(250, 235, 215, 0.138);
+    border: 2px solid black;
+}
+
+.soft-flag{
+    color: black;
+    align-self: flex-end;
+    padding-right: 2px;
+    font-size: x-small;
+}
