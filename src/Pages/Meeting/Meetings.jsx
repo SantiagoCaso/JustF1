@@ -21,7 +21,7 @@ export const Meetings = () => {
               {sessionKey? 
                 (<>
                   <LastDriversTable meetingKey={meetingKey} sessionKey={sessionKey}/>
-                  <div className='flex w-full gap-1'>
+                  <div className='flex w-full gap-1 justify-around'>
                     <Weather sessionKey={sessionKey}/>
                     <FlagsRace sessionKey={sessionKey}/>
                   </div>

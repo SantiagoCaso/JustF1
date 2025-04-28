@@ -15,8 +15,7 @@ export const Home = () => {
           <h3>Posiciones finales en la ultima carrera</h3>
           <LastDriversTable meetingKey={'latest'} sessionKey={'latest'}/>
         </div>
-        <div className='w-1/2 max-sm:w-full justify-center align-middle flex '>
-         <p>poner algo acá </p>
+        <div className='w-1/2 max-sm:w-full align-middle flex '>
          {/* <Top3Drivers idMeeting={'latest'}/> */}
          <TeamsList/>
         </div>

@@ -5,7 +5,10 @@
     color: rgb(0, 0, 0);
     font-weight: 900;
 }
+.driver-name{
+    font-family: "Dancing Script", sans-serif;
 
+}
 .card:hover .number,
 .parent:active .number {
     color: red; 
@@ -29,7 +32,7 @@
     margin: 40px;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 430px) {
     .card{
         width: 150px;
         
@@ -46,5 +49,8 @@
         font-size: larger;
         margin: 20px 0px  20px 0px;
         text-align: center;
+    }
+    .number{
+        font-size: 1.5rem;
     }
 }

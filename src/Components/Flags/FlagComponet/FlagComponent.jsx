@@ -31,7 +31,7 @@ export const FlagComponent = ({date, lapNumber, flag, message, driverNumber, sco
       };
 
   return (
-    <div className='flag-component-container'>
+    <div className='flag-component-container '>
         <p>Momento {timeString}</p>
         {lapNumber? (<p>Numero de vuelta {lapNumber}</p>) : (<></>)}
         <p className={`${getFlagColorClass(flag)}`}>

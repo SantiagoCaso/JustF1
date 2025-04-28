@@ -15,7 +15,7 @@ export const FlagsRace = ({ sessionKey }) => {
   }, [sessionKey])
 
   return (
-    <div className="mt-2.5">
+    <div className="mt-2.5 ">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full text-left  flex justify-between items-center"
@@ -25,7 +25,7 @@ export const FlagsRace = ({ sessionKey }) => {
       </button>
 
       {isOpen && (
-        <div className="max-h-64 overflow-y-auto space-y-2">
+        <div className="max-h-64  overflow-y-auto space-y-2 ">
           {flags?.map((data, index) => (
             <FlagComponent
               key={index}
