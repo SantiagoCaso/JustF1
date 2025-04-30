@@ -24,10 +24,11 @@
 .soft.movil{
   display: none;
 }
+.show-meetings-button{
+  display: none;
+}
 
 @media (max-width: 768px) {
- 
-
   .container {
     display: grid;
     grid-template-columns: 1fr ; 
@@ -39,6 +40,15 @@
   }
   .soft.movil{
     display: block;
+  }
+
+  .show-meetings-button{
+    display: block;
+    border: 1px solid black;
+    border-radius: 6px;        
+    margin:  0.25rem;  
+    padding: 0.25rem;           
+    background-color: black;
   }
 
 }

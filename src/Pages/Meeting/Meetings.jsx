@@ -19,12 +19,20 @@ export const Meetings = () => {
             (<p className='soft text-center'>seleccione una fecha para poder ver los resultados</p>)  
             }
               {sessionKey? 
-                (<>
+                (<> 
                   <LastDriversTable meetingKey={meetingKey} sessionKey={sessionKey}/>
                   <div className='flex w-full gap-1 justify-around'>
-                    <Weather sessionKey={sessionKey}/>
+                    <div className='flex flex-col gap-4'>
+                      <Weather sessionKey={sessionKey}/>
+                      <button className='show-meetings-button ' 
+                      onClick={() => (
+                        setSessionKey(null)
+                      )}>Mostrar fechas</button>
+                    </div>
                     <FlagsRace sessionKey={sessionKey}/>
                   </div>
+
+                  
                 </>) 
                 : 
                 (<></>)
