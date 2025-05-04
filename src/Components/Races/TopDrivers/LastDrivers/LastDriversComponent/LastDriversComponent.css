@@ -3,3 +3,8 @@ td{
     border: 1px solid #ffffff75; 
     width: fit-content;
 }
+
+tr:hover{
+    background-color: #ffffff75;
+    cursor: pointer;
+}

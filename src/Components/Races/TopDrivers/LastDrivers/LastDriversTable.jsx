@@ -3,9 +3,11 @@ import { LastDriversComponent } from './LastDriversComponent/LastDriversComponen
 import './LastDriversTable.css';
 import { CircularProgress } from '@mui/material';
 
+
 const LastDriversTable = ({ meetingKey, sessionKey }) => {
   const [finalPositions, setFinalPositions] = useState([]);
   const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -66,6 +68,8 @@ const LastDriversTable = ({ meetingKey, sessionKey }) => {
     fetchData();
   }, [meetingKey, sessionKey]);
 
+ 
+
   return (
     <>
       {loading? (
@@ -75,7 +79,7 @@ const LastDriversTable = ({ meetingKey, sessionKey }) => {
       ) : (
         <table className="table-drivers-positions">
         <thead>
-          <tr className="fila">
+          <tr className="fila" >
             <th className="celda">Pt</th>
             <th className="celda">Nombre</th>
             <th className="celda">Escuderia</th>
