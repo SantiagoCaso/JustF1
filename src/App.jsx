@@ -9,6 +9,7 @@ import { Meetings } from './Pages/Meeting/Meetings'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import TeamsList from './Components/Teams/TeamsList/TeamsList'
+import { Footer } from './Components/Footer/Footer'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/meetings" element={<Meetings/>} />
         </Routes>
           <ToastContainer position="top-right" autoClose={4000} />
+          <Footer/>
       </BrowserRouter>
   )
 }

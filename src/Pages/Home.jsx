@@ -9,14 +9,12 @@ export const Home = () => {
   
   return (
     <>
-      <div>Home</div>
       <div className='home '>
         <div className='w-full m-1 '>
           <h3>Posiciones finales en la ultima carrera</h3>
           <LastDriversTable meetingKey={'latest'} sessionKey={'latest'}/>
         </div>
         <div className='w-1/2 max-sm:w-full align-middle flex '>
-         {/* <Top3Drivers idMeeting={'latest'}/> */}
          <TeamsList/>
         </div>
       </div>
