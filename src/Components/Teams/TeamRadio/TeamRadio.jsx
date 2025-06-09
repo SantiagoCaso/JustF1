@@ -18,13 +18,14 @@ export const TeamRadio = ({ driverNumber, driverName}) => {
 
   return (
     <div>
+      
       {lastAudio ? (
         <>
             <p>audio {driverName}</p>
             <audio src={lastAudio.recording_url} controls />
         </>
       ) : (
-        <p>No audio available</p>
+        <p>audio de {driverName} no disponible</p>
       )}
     </div>
   );

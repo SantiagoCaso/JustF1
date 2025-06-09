@@ -10,18 +10,32 @@ const TeamsList = () => {
   const year = new Date().getFullYear();
 
 
-  useEffect(() => {
-    fetch('https://api.openf1.org/v1/drivers?meeting_key=latest&session_key=latest')
-      .then((res) => res.json())
-      .then((data) => {
-        const uniqueTeams = [...new Set(data.map(driver => driver.team_name))];
-        setTeams(uniqueTeams);
-        setDrivers(data);
-        
-      })
-      .catch((err) => console.error('Error fetching drivers:', err));
-      
-  }, []);
+ useEffect(() => {
+  const fetchDrivers = async () => {
+    try {
+      const res = await fetch('https://api.openf1.org/v1/drivers?meeting_key=latest&session_key=latest');
+
+      if (!res.ok) {
+        if (res.status === 429) {
+          console.warn('Demasiadas peticiones (429). Intenta más tarde.');
+        } else {
+          console.error(`Error HTTP: ${res.status}`);
+        }
+        return; 
+      }
+
+      const data = await res.json();
+      const uniqueTeams = [...new Set(data.map(driver => driver.team_name))];
+      setTeams(uniqueTeams);
+      setDrivers(data);
+    } catch (error) {
+      console.error('Error al obtener los drivers:', error.message);
+    }
+  };
+
+  fetchDrivers();
+}, []);
+
 
 
   return (
@@ -48,13 +62,17 @@ const TeamsList = () => {
                   {isExpanded && (
                     <>
                       <TeamComponet data={driversForTeam} />
-                      {driversForTeam?.map((data, index) => (
+                      <div>
+                        <p className='soft'>auidos de la ultima carrera</p>
+                        {driversForTeam?.map((data, index) => (
                         <TeamRadio
                           key={index}
                           driverNumber={data.driver_number}
                           driverName={data.first_name}
                         />
                       ))}
+                      </div>
+                      
                     </>
                   )}
                 </div>

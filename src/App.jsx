@@ -9,11 +9,12 @@ import { Meetings } from './Pages/Meeting/Meetings'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import TeamsList from './Components/Teams/TeamsList/TeamsList'
-import { Footer } from './Components/Footer/Footer'
+import  Footer  from './Components/Footer/Footer'
 
 function App() {
 
   return (
+    <div className="flex flex-col min-h-screen">
       <BrowserRouter>
         <Navbar/>
         <Routes>
@@ -26,6 +27,7 @@ function App() {
           <ToastContainer position="top-right" autoClose={4000} />
           <Footer/>
       </BrowserRouter>
+     </div> 
   )
 }
 

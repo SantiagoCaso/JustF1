@@ -1,5 +1,5 @@
-
 import './DriverCard.css'
+
 const DriverCard = ({name, lastName, img, driverNumber, team}) => {
   
   return (
@@ -7,7 +7,11 @@ const DriverCard = ({name, lastName, img, driverNumber, team}) => {
         <div className='font-semibold '>
             <h3 className='text-2xl pl-3 driver-name '>{name}</h3>
             <h3 className='text-3xl text-right pr-3'>{lastName}</h3>
-            <img src={img} alt="" className='size-full justify-center'/>            
+            {img ? 
+              (<img src={img} alt="" className='size-full justify-center'/>   ) 
+              :
+              (<img src='src/assets/piloto_silueta.png' alt="" className='size-full justify-center'/>)
+            }              
         </div>
         <div>
             <p className='text-2xl text-center number'>{driverNumber} </p>

@@ -5,7 +5,7 @@ export const WeatherComponet = ({airTemperature, date, humidity, rainFall, track
 
   return (
     <div className='weather-container'>
-        <h4 >Condiciones climaticas</h4>
+        <p >Condiciones climaticas</p>
         <span className='w-full  bg-gray-500 h-0.5 '></span>
         <div className='data-weather'>
           Temperatura 

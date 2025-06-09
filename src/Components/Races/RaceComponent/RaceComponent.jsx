@@ -3,12 +3,30 @@ import "./RaceComponent.css"
 export const RaceComponent = ({meetingName, country, city, circuit, officialName, dateStart, meetingKey, setSessionKey, setSessionName}) => {
   const [meeting, setMeeting] = useState([])
   useEffect(() => {
-    fetch(`https://api.openf1.org/v1/sessions?meeting_key=${meetingKey}`)
-    .then(response => response.json())
-    .then((data) => {
-      setMeeting(data)      
-    });   
-  }, [])
+  const fetchSession = async () => {
+    try {
+      const response = await fetch(`https://api.openf1.org/v1/sessions?meeting_key=${meetingKey}`);
+
+      if (!response.ok) {
+        if (response.status === 429) {
+          console.warn("Demasiadas solicitudes a la API (429).");
+        } else {
+          console.error(`Error HTTP: ${response.status}`);
+        }
+        return;
+      }
+
+      const data = await response.json();
+      setMeeting(data);
+
+    } catch (error) {
+      console.error("Error al obtener sesiones:", error.message);
+    }
+  };
+
+  fetchSession();
+}, [meetingKey]);
+
   
   return (
     <div className='race-component'>
