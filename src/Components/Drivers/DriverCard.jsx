@@ -10,7 +10,7 @@ const DriverCard = ({name, lastName, img, driverNumber, team}) => {
             {img ? 
               (<img src={img} alt="" className='size-full justify-center'/>   ) 
               :
-              (<img src='src/assets/piloto_silueta.png' alt="" className='size-full justify-center'/>)
+              (<img src='/piloto_silueta.png' alt="" className='size-full justify-center'/>)
             }              
         </div>
         <div>
