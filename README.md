@@ -1,13 +1,33 @@
-# Repo Privado
-# React + Vite
+#🚀 JustF1 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## SPA (Single Page Application) desarrollada con React + Vite, pensada para mostrar el poder del frontend moderno al consumir servicios complejos como los de la API pública de OpenF1.
 
-Currently, two official plugins are available:
+🧩 ¿Qué hace JustF1?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✅ Consulta en tiempo real de:
 
-## Expanding the ESLint configuration
+Resultados de las últimas carreras
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Pilotos actuales por escudería
+
+Detalles por Gran Premio: condiciones climáticas, posiciones finales, y eventos en pista como banderas
+
+✅ Navegación sencilla entre:
+
+Página principal con resumen
+
+Escuderías (en construcción)
+
+Pilotos con filtro y vista detallada
+
+Fechas con toda la temporada 2025
+
+🔧 Tecnologías:
+
+React
+
+Vite
+
+CSS3 + Tailwind
+
+OpenF1 API
