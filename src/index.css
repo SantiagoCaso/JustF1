@@ -19,6 +19,16 @@ a {
   color: #f30a0a;
   text-decoration: inherit;
 }
+
+@media (max-width: 768px) {
+  a {
+    font-weight: 500;
+    color: #f30a0a;
+    text-decoration: inherit;
+  }
+}
+
+
 a:hover {
   color: #ffffff;
 }
