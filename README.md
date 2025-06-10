@@ -1,4 +1,4 @@
-#🚀 JustF1 
+# 🚀 JustF1 
 
 ## SPA (Single Page Application) desarrollada con React + Vite, pensada para mostrar el poder del frontend moderno al consumir servicios complejos como los de la API pública de OpenF1.
 
