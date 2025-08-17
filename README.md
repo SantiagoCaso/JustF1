@@ -31,3 +31,4 @@ Vite
 CSS3 + Tailwind
 
 OpenF1 API
+<img width="1851" height="1277" alt="JustF1 2" src="https://github.com/user-attachments/assets/e476330b-f38a-4619-8bb8-cad19b4a45f4" />
