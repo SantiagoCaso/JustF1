@@ -12,6 +12,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  height: 100dvh;
 }
 
 a {
@@ -28,13 +30,11 @@ a {
   }
 }
 
-
 a:hover {
   color: #ffffff;
 }
 
-
 ::selection {
-  background-color: rgba(255, 204, 0, 0.5); 
+  background-color: rgba(255, 204, 0, 0.5);
   color: black;
 }
